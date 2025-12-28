@@ -36,7 +36,6 @@ async function setup() {
         aggregate_usage: 'sum', // Sum all usage in billing period
       },
       billing_scheme: 'per_unit',
-      unit_amount: 1, // $0.01 per 10 API calls = $0.001 per call
       unit_amount_decimal: '0.1', // $0.001 per API call (0.1 cents)
       metadata: {
         type: 'api_calls',
