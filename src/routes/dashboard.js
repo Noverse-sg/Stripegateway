@@ -505,58 +505,30 @@ router.get('/', (req, res) => {
 
     /* Mobile Responsive */
     @media (max-width: 768px) {
-      .mobile-header {
-        display: block;
-      }
-
-      .sidebar {
-        display: none;
-      }
-
-      .main {
-        margin-left: 0;
-        padding-top: 53px;
-      }
-
-      .content {
-        padding: 20px 16px;
-      }
-
-      .page-header {
-        flex-direction: column;
-        gap: 16px;
-      }
-
-      .page-title {
-        font-size: 18px;
-      }
-
-      .table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      table {
-        min-width: 600px;
-      }
-
-      th, td {
-        padding: 12px 10px;
-        font-size: 12px;
-      }
-
-      .key-cell {
-        min-width: 150px;
-      }
-
-      .user-cell {
-        min-width: 140px;
-      }
-
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
+      .mobile-header { display: block; }
+      .sidebar { display: none; }
+      .layout { display: block; }
+      .main { margin-left: 0; padding-top: 53px; }
+      .content { padding: 16px 12px; max-width: 100%; }
+      .page-header { flex-direction: column; gap: 12px; margin-bottom: 20px; }
+      .page-title { font-size: 16px; }
+      .page-desc { font-size: 11px; }
+      .key-count { font-size: 10px; padding: 2px 6px; }
+      .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 6px; }
+      table { min-width: 500px; }
+      th { padding: 10px 8px; font-size: 9px; }
+      td { padding: 10px 8px; font-size: 11px; }
+      .key-cell { min-width: 120px; }
+      .key-name { font-size: 12px; }
+      .key-value { font-size: 10px; }
+      .user-cell { min-width: 100px; }
+      .user-name { font-size: 11px; }
+      .user-email { font-size: 10px; }
+      .workspace-badge { font-size: 10px; padding: 3px 6px; }
+      .date-cell { font-size: 11px; }
+      .cost-cell { font-size: 11px; }
+      .btn { width: 100%; justify-content: center; padding: 10px 12px; font-size: 13px; }
+      .actions-btn { font-size: 14px; }
     }
   </style>
 </head>
@@ -976,12 +948,20 @@ router.get('/profile', (req, res) => {
     @media (max-width: 768px) {
       .mobile-header { display: block; }
       .sidebar { display: none; }
+      .layout { display: block; }
       .main { margin-left: 0; padding-top: 53px; }
-      .content { padding: 20px 16px; }
-      .page-title { font-size: 18px; }
-      .profile-header { flex-direction: column; text-align: center; }
-      .info-row { flex-direction: column; gap: 4px; }
-      .info-label { font-size: 12px; }
+      .content { padding: 16px 12px; max-width: 100%; }
+      .page-title { font-size: 16px; margin-bottom: 20px; }
+      .card { padding: 16px; margin-bottom: 12px; }
+      .card-title { font-size: 12px; margin-bottom: 12px; }
+      .profile-header { flex-direction: column; text-align: center; gap: 12px; margin-bottom: 16px; }
+      .profile-avatar { width: 48px; height: 48px; font-size: 18px; }
+      .profile-info h2 { font-size: 16px; }
+      .profile-info p { font-size: 12px; }
+      .info-row { flex-direction: column; gap: 4px; padding: 10px 0; }
+      .info-label { font-size: 11px; }
+      .info-value { font-size: 12px; }
+      .badge { font-size: 11px; }
     }
   </style>
 </head>
@@ -1133,13 +1113,20 @@ router.get('/billing', (req, res) => {
     @media (max-width: 768px) {
       .mobile-header { display: block; }
       .sidebar { display: none; }
+      .layout { display: block; }
       .main { margin-left: 0; padding-top: 53px; }
-      .content { padding: 20px 16px; }
-      .page-title { font-size: 18px; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .stat-value { font-size: 24px; }
-      .info-row { flex-direction: column; gap: 4px; }
-      .btn { width: 100%; justify-content: center; }
+      .content { padding: 16px 12px; max-width: 100%; }
+      .page-title { font-size: 16px; margin-bottom: 20px; }
+      .stats-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
+      .stat-card { padding: 16px; }
+      .stat-label { font-size: 10px; }
+      .stat-value { font-size: 22px; }
+      .card { padding: 16px; margin-bottom: 12px; }
+      .card-title { font-size: 13px; margin-bottom: 12px; }
+      .info-row { flex-direction: column; gap: 4px; padding: 10px 0; }
+      .info-label { font-size: 11px; }
+      .info-value { font-size: 12px; }
+      .btn { width: 100%; justify-content: center; padding: 12px; font-size: 13px; }
     }
   </style>
 </head>
@@ -1280,14 +1267,19 @@ router.get('/usage', (req, res) => {
     @media (max-width: 768px) {
       .mobile-header { display: block; }
       .sidebar { display: none; }
+      .layout { display: block; }
       .main { margin-left: 0; padding-top: 53px; }
-      .content { padding: 20px 16px; }
-      .page-title { font-size: 18px; }
-      .stats-grid { grid-template-columns: 1fr; }
-      .stat-value { font-size: 24px; }
-      .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      table { min-width: 400px; }
-      th, td { padding: 12px 10px; font-size: 12px; }
+      .content { padding: 16px 12px; max-width: 100%; }
+      .page-title { font-size: 16px; margin-bottom: 20px; }
+      .stats-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 20px; }
+      .stat-card { padding: 16px; }
+      .stat-label { font-size: 10px; }
+      .stat-value { font-size: 22px; }
+      .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 6px; }
+      table { min-width: 350px; }
+      th { padding: 10px 8px; font-size: 9px; }
+      td { padding: 10px 8px; font-size: 11px; }
+      .calls { font-size: 11px; }
     }
   </style>
 </head>

@@ -138,19 +138,29 @@ app.get('/', (req, res) => {
       .mobile-header { display: block; }
       .sidebar { display: none; }
       .main { margin-left: 0; padding-top: 53px; }
-      .content { padding: 20px 16px; }
-      .page-title { font-size: 18px; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .pricing-value { font-size: 20px; }
-      .endpoint { flex-wrap: wrap; gap: 8px; padding: 12px; }
-      .endpoint-path { font-size: 11px; order: 2; width: 100%; }
-      .endpoint-desc { order: 3; width: 100%; }
-      .badge { order: 1; margin-left: auto; }
-      .code-block { padding: 12px; }
-      .code-block code { font-size: 10px; }
-      .auth-method { flex-direction: column; align-items: flex-start; gap: 4px; }
-      .auth-label { width: auto; }
-      .auth-code { font-size: 10px; word-break: break-all; }
+      .layout { display: block; }
+      .content { padding: 16px 12px; max-width: 100%; }
+      .page-title { font-size: 16px; margin-bottom: 4px; }
+      .page-desc { font-size: 12px; margin-bottom: 20px; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
+      .pricing-card { padding: 14px; }
+      .pricing-value { font-size: 18px; }
+      .pricing-label { font-size: 11px; }
+      .section { margin-bottom: 20px; }
+      .section-title { font-size: 13px; margin-bottom: 10px; }
+      .card { padding: 14px; margin-bottom: 8px; }
+      .card-title { font-size: 12px; margin-bottom: 8px; }
+      .endpoint-list { gap: 6px; }
+      .endpoint { flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px; }
+      .method { margin-right: 0; margin-bottom: 4px; }
+      .endpoint-path { font-size: 11px; width: 100%; word-break: break-all; }
+      .endpoint-desc { font-size: 11px; }
+      .badge { margin-left: 0; margin-top: 4px; }
+      .code-block { padding: 10px; margin-top: 8px; }
+      .code-block code { font-size: 9px; line-height: 1.4; }
+      .auth-method { flex-direction: column; align-items: flex-start; gap: 4px; padding: 6px 0; }
+      .auth-label { width: auto; font-size: 11px; }
+      .auth-code { font-size: 9px; word-break: break-all; padding: 3px 6px; }
     }
   </style>
 </head>
