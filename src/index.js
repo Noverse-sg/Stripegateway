@@ -124,9 +124,50 @@ app.get('/', (req, res) => {
     .code-block .cmd { color: #10b981; }
     .code-block .flag { color: #f59e0b; }
     .code-block .string { color: #60a5fa; }
+    .mobile-header { display: none; background: #141414; border-bottom: 1px solid #2a2a2a; padding: 12px 16px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+    .mobile-header-content { display: flex; align-items: center; justify-content: space-between; }
+    .mobile-logo { display: flex; align-items: center; gap: 10px; }
+    .mobile-avatar { width: 28px; height: 28px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; }
+    .mobile-title { font-weight: 500; font-size: 14px; }
+    .menu-btn { background: none; border: none; color: #a3a3a3; font-size: 24px; cursor: pointer; padding: 4px; }
+    .mobile-nav { display: none; position: fixed; top: 53px; left: 0; right: 0; bottom: 0; background: #141414; z-index: 99; padding: 16px; }
+    .mobile-nav.open { display: block; }
+    .mobile-nav .nav-item { display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 6px; color: #a3a3a3; text-decoration: none; font-size: 14px; margin-bottom: 4px; }
+    .mobile-nav .nav-item:hover, .mobile-nav .nav-item.active { background: #252525; color: #fafafa; }
+    @media (max-width: 768px) {
+      .mobile-header { display: block; }
+      .sidebar { display: none; }
+      .main { margin-left: 0; padding-top: 53px; }
+      .content { padding: 20px 16px; }
+      .page-title { font-size: 18px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-value { font-size: 20px; }
+      .endpoint { flex-wrap: wrap; gap: 8px; padding: 12px; }
+      .endpoint-path { font-size: 11px; order: 2; width: 100%; }
+      .endpoint-desc { order: 3; width: 100%; }
+      .badge { order: 1; margin-left: auto; }
+      .code-block { padding: 12px; }
+      .code-block code { font-size: 10px; }
+      .auth-method { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .auth-label { width: auto; }
+      .auth-code { font-size: 10px; word-break: break-all; }
+    }
   </style>
 </head>
 <body>
+  <header class="mobile-header">
+    <div class="mobile-header-content">
+      <div class="mobile-logo"><div class="mobile-avatar">N</div><span class="mobile-title">Novo API</span></div>
+      <button class="menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+  <nav id="mobileNav" class="mobile-nav">
+    <a href="/" class="nav-item active"><span class="nav-icon">📖</span> Documentation</a>
+    <a href="/dashboard/profile" class="nav-item"><span class="nav-icon">👤</span> Profile</a>
+    <a href="/dashboard/billing" class="nav-item"><span class="nav-icon">💳</span> Billing</a>
+    <a href="/dashboard/usage" class="nav-item"><span class="nav-icon">📊</span> Usage</a>
+    <a href="/dashboard" class="nav-item"><span class="nav-icon">🔑</span> API keys</a>
+  </nav>
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-header">
@@ -140,8 +181,10 @@ app.get('/', (req, res) => {
       </div>
       <nav class="nav">
         <a href="/" class="nav-item active"><span class="nav-icon">📖</span> Documentation</a>
-        <a href="/dashboard" class="nav-item"><span class="nav-icon">🔑</span> API keys</a>
+        <a href="/dashboard/profile" class="nav-item"><span class="nav-icon">👤</span> Profile</a>
+        <a href="/dashboard/billing" class="nav-item"><span class="nav-icon">💳</span> Billing</a>
         <a href="/dashboard/usage" class="nav-item"><span class="nav-icon">📊</span> Usage</a>
+        <a href="/dashboard" class="nav-item"><span class="nav-icon">🔑</span> API keys</a>
       </nav>
     </aside>
 
